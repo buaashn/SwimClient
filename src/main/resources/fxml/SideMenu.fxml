@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.StackPane?>
+<?import java.lang.String?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+    <styleClass>
+        <String fx:value="side-menu"/>
+    </styleClass>
+    <JFXListView fx:id="sideList" styleClass="custom-jfx-list-view">
+
+        <JFXListView fx:id="aimSubList" styleClass="sublist">
+            <groupnode>
+                <Label fx:id="aim">航空情报</Label>
+            </groupnode>
+            <Label fx:id="airportImformation">机场信息</Label>
+            <Label fx:id="navaidPoint">导航点信息</Label>
+            <Label fx:id="designatedPoint">指定点信息</Label>
+            <Label fx:id="routeInformation">航路信息</Label>
+            <Label fx:id="airspce">空域信息</Label>
+            <Label fx:id="radar">雷达数据</Label>
+            <Label fx:id="aimFile">文件管理</Label>
+            <Label fx:id="aixm">AIXM</Label>
+        </JFXListView>
+
+        <JFXListView fx:id="flightSubList" styleClass="sublist">
+            <groupnode>
+                <Label fx:id="flight">航班信息</Label>
+            </groupnode>
+            <Label fx:id="flightInformation">航班申报</Label>
+            <Label fx:id="flightList">航班列表</Label>
+            <Label fx:id="flightChange">航班变更</Label>
+        </JFXListView>
+
+        <Label fx:id="weather">气象情报</Label>
+        <!--<JFXListView fx:id="flightSubList" styleClass="sublist">-->
+
+        <!--</JFXListView>-->
+
+        <Label fx:id="setting">设置</Label>
+
+        <!--<Label fx:id="icons">Icons</Label>-->
+
+    </JFXListView>
+</StackPane>

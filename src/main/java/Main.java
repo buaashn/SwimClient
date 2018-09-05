@@ -45,14 +45,14 @@ public class Main extends Application {
         decorator.setCustomMaximize(true);
         decorator.setGraphic(new SVGGlyph(""));
 
-        stage.setTitle("JFoenix Demo");
+        stage.setTitle("System Wide Information Management Client");
 
-        double width = 800;
-        double height = 600;
+        double width = 1920;
+        double height = 1080;
         try {
             Rectangle2D bounds = Screen.getScreens().get(0).getBounds();
-            width = bounds.getWidth() / 2.5;
-            height = bounds.getHeight() / 1.35;
+            width = bounds.getWidth() / 1.3;
+            height = bounds.getHeight() / 1.3;
         }catch (Exception e){ }
 
         Scene scene = new Scene(decorator, width, height);

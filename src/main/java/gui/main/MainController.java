@@ -1,6 +1,9 @@
 package gui.main;
 
 import com.jfoenix.controls.*;
+import datafx.ExtendedAnimatedFlowContainer;
+import gui.component.radarController;
+import gui.sidemenu.SideMenuController;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.Flow;
 import io.datafx.controller.flow.FlowHandler;
@@ -76,20 +79,20 @@ public class MainController {
         // create the inner flow and content
         context = new ViewFlowContext();
         // set the default controller
-//        Flow innerFlow = new Flow(ButtonController.class);
+        Flow innerFlow = new Flow(radarController.class);
 //
-//        final FlowHandler flowHandler = innerFlow.createHandler(context);
-//        context.register("ContentFlowHandler", flowHandler);
-//        context.register("ContentFlow", innerFlow);
-//        final Duration containerAnimationDuration = Duration.millis(320);
-//        drawer.setContent(flowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration, SWIPE_LEFT)));
-//        context.register("ContentPane", drawer.getContent().get(0));
+        final FlowHandler flowHandler = innerFlow.createHandler(context);
+        context.register("ContentFlowHandler", flowHandler);
+        context.register("ContentFlow", innerFlow);
+        final Duration containerAnimationDuration = Duration.millis(320);
+        drawer.setContent(flowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration, SWIPE_LEFT)));
+        context.register("ContentPane", drawer.getContent().get(0));
 
         // side controller will add links to the content flow
-//        Flow sideMenuFlow = new Flow(SideMenuController.class);
-//        final FlowHandler sideMenuFlowHandler = sideMenuFlow.createHandler(context);
-//        drawer.setSidePane(sideMenuFlowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration,
-//                SWIPE_LEFT)));
+        Flow sideMenuFlow = new Flow(SideMenuController.class);
+        final FlowHandler sideMenuFlowHandler = sideMenuFlow.createHandler(context);
+        drawer.setSidePane(sideMenuFlowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration,
+                SWIPE_LEFT)));
     }
 
     public static final class InputController {
