@@ -1,6 +1,8 @@
 package gui.sidemenu;
 
 import com.jfoenix.controls.JFXListView;
+import gui.component.airportController;
+import gui.component.radarController;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.Flow;
 import io.datafx.controller.flow.FlowException;
@@ -69,6 +71,8 @@ public class SideMenuController {
 
     @FXML
     private JFXListView<Label> sideList;
+    @FXML
+    private JFXListView<Label> aimSubList;
 
     /**
      * init fxml when loaded.
@@ -77,8 +81,25 @@ public class SideMenuController {
     public void init() {
         Objects.requireNonNull(context, "context");
         FlowHandler contentFlowHandler = (FlowHandler) context.getRegisteredObject("ContentFlowHandler");
-        sideList.propagateMouseEventsToParent();
-        sideList.getSelectionModel().selectedItemProperty().addListener((o, oldVal, newVal) -> {
+        //sideList.propagateMouseEventsToParent();
+        //sideList.getSelectionModel().selectedItemProperty().addListener((o, oldVal, newVal) -> {
+        //    new Thread(()->{
+        //        Platform.runLater(()->{
+        //            if (newVal != null) {
+        //                try {
+        //                    contentFlowHandler.handle(newVal.getId());
+        //                } catch (VetoException exc) {
+        //                    exc.printStackTrace();
+        //                } catch (FlowException exc) {
+        //                    exc.printStackTrace();
+        //                }
+        //            }
+        //        });
+        //    }).start();
+        //});
+
+        aimSubList.propagateMouseEventsToParent();
+        aimSubList.getSelectionModel().selectedItemProperty().addListener((o, oldVal, newVal) -> {
             new Thread(()->{
                 Platform.runLater(()->{
                     if (newVal != null) {
@@ -94,8 +115,8 @@ public class SideMenuController {
             }).start();
         });
         Flow contentFlow = (Flow) context.getRegisteredObject("ContentFlow");
-        //bindNodeToController(button, ButtonController.class, contentFlow, contentFlowHandler);
-        //bindNodeToController(checkbox, CheckboxController.class, contentFlow, contentFlowHandler);
+        bindNodeToController(airportImformation, airportController.class, contentFlow, contentFlowHandler);
+        bindNodeToController(radar, radarController.class, contentFlow, contentFlowHandler);
         //bindNodeToController(combobox, ComboBoxController.class, contentFlow, contentFlowHandler);
         //bindNodeToController(dialogs, DialogController.class, contentFlow, contentFlowHandler);
         //bindNodeToController(icons, IconsController.class, contentFlow, contentFlowHandler);

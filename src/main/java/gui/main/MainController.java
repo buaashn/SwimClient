@@ -2,11 +2,13 @@ package gui.main;
 
 import com.jfoenix.controls.*;
 import datafx.ExtendedAnimatedFlowContainer;
+import gui.component.airportController;
 import gui.component.radarController;
 import gui.sidemenu.SideMenuController;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.Flow;
 import io.datafx.controller.flow.FlowHandler;
+import io.datafx.controller.flow.container.DefaultFlowContainer;
 import io.datafx.controller.flow.context.FXMLViewFlowContext;
 import io.datafx.controller.flow.context.ViewFlowContext;
 import javafx.animation.Transition;
@@ -41,6 +43,7 @@ public class MainController {
     private JFXDrawer drawer;
 
     private JFXPopup toolbarPopup;
+
 
     /**
      * init fxml when loaded.
@@ -79,8 +82,14 @@ public class MainController {
         // create the inner flow and content
         context = new ViewFlowContext();
         // set the default controller
-        Flow innerFlow = new Flow(radarController.class);
+        //Flow flow = new Flow(airportController.class);
+        //DefaultFlowContainer container = new DefaultFlowContainer();
+        //flowContext = new ViewFlowContext();
+        //flowContext.register("Stage", stage);
+        //flow.createHandler(flowContext).start(container);
+
 //
+        Flow innerFlow = new Flow(airportController.class);
         final FlowHandler flowHandler = innerFlow.createHandler(context);
         context.register("ContentFlowHandler", flowHandler);
         context.register("ContentFlow", innerFlow);

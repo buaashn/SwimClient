@@ -1,6 +1,8 @@
 package model.DO;
 
-public class RadarTestData {
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
+public class RadarTestData extends RecursiveTreeObject<RadarTestData>  {
     private String flightTag;
     private String lontitude;
     private String latitude;

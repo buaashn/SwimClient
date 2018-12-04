@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/src/main/java/gui/component/baiduMap.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/gui/web/air.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/gui/web/baiduMap.html" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/model/DO/AirTrafficManagementServiceData.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/model/DO/AirportData.java" charset="GBK" />

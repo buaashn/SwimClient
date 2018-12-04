@@ -9,23 +9,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<StackPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<StackPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <SplitPane dividerPositions="0.2" prefHeight="200.0" prefWidth="200.0">
          <items>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView fx:id="radarDataTable" layoutX="17.0" layoutY="61.0" prefHeight="600.0" prefWidth="532.0">
+                  <JFXTreeTableView fx:id="radarDataTable" layoutX="17.0" layoutY="61.0" prefHeight="600.0" prefWidth="532.0">
                      <columns>
-                        <TableColumn fx:id="radarIDColumn" minWidth="10.0" prefWidth="90.0" text="codeICAO" />
-                        <TableColumn fx:id="radarFlightTagColumn" minWidth="10.0" prefWidth="130.0" text="name" />
-                        <TableColumn fx:id="radarColumn" minWidth="10.0" prefWidth="85.0" text="controlTyoe" />
-                        <TableColumn fx:id="airportDesignatorIATAColumn" minWidth="10.0" prefWidth="115.0" text="designatorIATA" />
-                        <TableColumn fx:id="airportCityColumn" minWidth="10.0" prefWidth="130.0" text="city" />
-                        <TableColumn fx:id="airportLatitudeColumn" minWidth="10.0" prefWidth="100.0" text="latitude" />
-                        <TableColumn fx:id="airportLongtitudeColumn" minWidth="10.0" prefWidth="100.0" text="longtitude" />
+                        <TreeTableColumn fx:id="radarTimeColumn" minWidth="10.0" prefWidth="90.0" text="Time" />
+                        <TreeTableColumn fx:id="radarFlightTagColumn" minWidth="10.0" prefWidth="130.0" text="FlightTAG" />
+                        <TreeTableColumn fx:id="radarDirectionColumn" minWidth="10.0" prefWidth="85.0" text="Direction" />
+                        <TreeTableColumn fx:id="radarLatitudeColumn" minWidth="10.0" prefWidth="100.0" text="Latitude" />
+                        <TreeTableColumn fx:id="radarLongtitudeColumn" minWidth="10.0" prefWidth="100.0" text="Longtitude" />
                      </columns>
-                  </TableView>
+                  </JFXTreeTableView>
 
                   <JFXButton fx:id="showRadarButton" layoutX="17.0" layoutY="14.0" onAction="#onShowRadarButtonClick" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #009688;" text="显示数据" textFill="WHITE">
                      <font>

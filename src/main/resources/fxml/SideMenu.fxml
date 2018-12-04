@@ -11,8 +11,9 @@
     <JFXListView fx:id="sideList" styleClass="custom-jfx-list-view">
 
         <JFXListView fx:id="aimSubList" styleClass="sublist">
+
             <groupnode>
-                <Label fx:id="aim">航空情报</Label>
+                <Label fx:id="aim">航行情报</Label>
             </groupnode>
             <Label fx:id="airportImformation">机场信息</Label>
             <Label fx:id="navaidPoint">导航点信息</Label>

@@ -45,7 +45,8 @@ public class Main extends Application {
         decorator.setCustomMaximize(true);
         decorator.setGraphic(new SVGGlyph(""));
 
-        stage.setTitle("System Wide Information Management Client");
+        // 标题名称
+        stage.setTitle("System Wide Informa tion Management Client");
 
         double width = 1920;
         double height = 1080;
